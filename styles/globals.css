@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h3 {
+    @apply text-3xl;
+  }
+}
+@layer components {
+  .main-gradient {
+    background-image: linear-gradient(
+      45deg,
+      hsl(225deg 9% 9%) 0%,
+      hsl(221deg 37% 16%) 4%,
+      hsl(219deg 53% 24%) 8%,
+      hsl(219deg 61% 32%) 12%,
+      hsl(220deg 64% 41%) 16%,
+      hsl(223deg 66% 52%) 20%,
+      hsl(227deg 100% 64%) 25%,
+      hsl(282deg 76% 64%) 29%,
+      hsl(320deg 99% 64%) 33%,
+      hsl(336deg 100% 64%) 37%,
+      hsl(2deg 100% 69%) 42%,
+      hsl(27deg 100% 60%) 46%,
+      hsl(43deg 100% 50%) 50%,
+      hsl(39deg 100% 50%) 54%,
+      hsl(36deg 100% 50%) 59%,
+      hsl(32deg 100% 50%) 63%,
+      hsl(28deg 100% 50%) 67%,
+      hsl(23deg 100% 50%) 71%,
+      hsl(18deg 100% 50%) 76%,
+      hsl(349deg 80% 51%) 80%,
+      hsl(335deg 77% 41%) 84%,
+      hsl(320deg 55% 34%) 88%,
+      hsl(288deg 35% 26%) 92%,
+      hsl(249deg 26% 19%) 96%,
+      hsl(225deg 9% 9%) 100%
+    );
+  }
+  .color-trans {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+}

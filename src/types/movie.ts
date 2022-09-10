@@ -14,6 +14,8 @@ export interface IMovie {
   title: string;
   popularity: number;
   media_type: string;
+  first_air_date: string;
+  name: string;
 }
 
 export interface IGenre {

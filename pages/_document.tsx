@@ -21,6 +21,10 @@ class MyDocument extends Document {
       <Html data-theme="cupcake">
         <Head>
           <link rel="icon" type="image/x-icon" href="../public/favicon.png" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=Yeseva+One&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="text-neutral-800">
           <Main />
