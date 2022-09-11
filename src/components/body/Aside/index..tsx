@@ -1,22 +1,19 @@
-import React from 'react';
 import { SmMovieCard } from './SmMovieCard';
-import { IMovie } from '../../types/movie';
+import dataStore from '../../../lib/store/dataStore';
 
-interface Props {
-  trending: IMovie[];
-}
+export function NewTrailers({}) {
+  const { trending } = dataStore();
 
-export function NewTrailers({ trending }: Props) {
   return (
     <div className="flex-1 overflow-hidden">
-      <div className="sticky top-0 z-50 flex justify-between p-10">
-        <h3 className="">New trailers</h3>
+      <div className="sticky top-0 z-50 flex h-28 items-center justify-between px-10">
+        <h3 className="">Trending</h3>
         <div className="flex items-center">
           <span className="mr-1 text-base-300">Sort By:</span>
           <span>Rating</span>
         </div>
       </div>
-      <div className="h-[calc(18rem*2+2rem)] snap-y overflow-scroll px-10">
+      <div className="h-[calc(18rem*2+4rem)] snap-y overflow-scroll px-10">
         <div className="space-y-8">
           {trending.slice(0, 6).map((trend, i) => (
             <SmMovieCard

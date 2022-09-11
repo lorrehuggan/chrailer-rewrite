@@ -9,25 +9,16 @@ import {
   FETCH_TRENDING,
   FETCH_UPCOMING,
 } from '../src/lib/movie-API';
-import { useTrendingState } from '../src/lib/stor/trending';
-import { IGenre, IMovie } from '../src/types/movie';
+import UseStore, { StoreProps } from '../src/lib/hooks/useStore';
 
-interface Props {
-  trending: IMovie[];
-  upcoming: IMovie[];
-  top_rated: IMovie[];
-  popular: IMovie[];
-  genre: IGenre[];
-}
-
-const Home: NextPage<Props> = ({
+const Home: NextPage<StoreProps> = ({
   trending,
   genre,
   upcoming,
   top_rated,
   popular,
 }) => {
-  const setTrending = useTrendingState((state) => {});
+  const {} = UseStore({ trending, genre, upcoming, top_rated, popular });
 
   return (
     <>
@@ -39,8 +30,7 @@ const Home: NextPage<Props> = ({
 
       <main className="min-h-screen bg-base-900 text-base-50">
         <Header />
-        <div className="mx-auto h-[1px] w-2/3 bg-base-700" />
-        <Body trending={trending} />
+        <Body />
       </main>
     </>
   );

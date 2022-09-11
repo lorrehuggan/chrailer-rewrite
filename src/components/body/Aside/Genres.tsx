@@ -1,6 +1,3 @@
-import React from 'react';
-import { IGenre } from '../../types/movie';
-
 export function Genres({}) {
   return (
     <div className="h-1/3 w-full space-y-8 bg-base-700 p-10">

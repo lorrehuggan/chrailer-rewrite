@@ -1,21 +1,15 @@
-import { Genres } from './Genres';
-import { NewTrailers } from './NewTrailers';
-import { Aside } from './Aside';
-import * as React from 'react';
-import { IMovie } from '../../types/movie';
+import { Main } from './Main/index.';
+import { Genres } from './Aside/Genres';
+import { NewTrailers } from './Aside/index.';
 
-export interface IBodyProps {
-  trending: IMovie[];
-}
-
-export default function Body({ trending }: IBodyProps) {
+export default function Body() {
   return (
     <section className="flex">
-      <aside className="flex min-h-[calc(100vh-12.5rem)] w-1/4 flex-col border-r-[1px] border-base-700">
-        <NewTrailers trending={trending} />
+      <aside className="flex min-w-[650px] flex-col border-r-[1px] border-base-700">
+        <NewTrailers />
         <Genres />
       </aside>
-      <div className="min-h-[calc(100vh-12.5rem)] flex-1"></div>
+      <Main />
     </section>
   );
 }
