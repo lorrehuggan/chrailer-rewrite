@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Body from '../src/components/body';
 import Header from '../src/components/header';
 import {
+  FETCH_CATEGORIES,
   FETCH_GENRE,
   FETCH_POPULAR,
   FETCH_TOP_RATED,
@@ -10,6 +11,7 @@ import {
   FETCH_UPCOMING,
 } from '../src/lib/movie-API';
 import UseStore, { StoreProps } from '../src/lib/hooks/useStore';
+import { IGenre } from '../src/types/movie';
 
 const Home: NextPage<StoreProps> = ({
   trending,

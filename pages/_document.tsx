@@ -26,7 +26,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="text-neutral-800">
+        <body className="">
           <Main />
           <NextScript />
         </body>

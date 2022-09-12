@@ -4,7 +4,7 @@
 
 @layer base {
   h3 {
-    @apply text-3xl;
+    @apply text-4xl tracking-tighter;
   }
 }
 @layer components {
@@ -40,5 +40,12 @@
   }
   .color-trans {
     @apply transition-colors duration-300 ease-in-out;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
