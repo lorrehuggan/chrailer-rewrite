@@ -49,3 +49,6 @@ export const FETCH_LATEST = () => {
 export const FETCH_SIMILAR = (id: string) => {
   return BASE_URL + `movie/${id}/similar${API_PARAMS(1)}`;
 };
+export const FETCH_IMAGES = (id: string) => {
+  return BASE_URL + `movie/${id}/images?api_key=${API_KEY}`;
+};

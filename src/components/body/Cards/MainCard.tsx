@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import React from 'react';
 import { IMAGE_PATH } from '../../../lib/movie-API';
 import dataStore from '../../../lib/store/dataStore';
 import Filter from './Filter';
 
-const movie = 19;
+const movie = 3;
 
 export function MainCard() {
   const { trending } = dataStore();
@@ -16,11 +15,10 @@ export function MainCard() {
         backgroundSize: 'cover',
         backgroundPosition: '0% 35%',
       }}
-      className="relative flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl p-5 shadow-lg"
+      className="relative flex h-96 w-full flex-1 flex-col justify-between overflow-hidden rounded-xl p-5 shadow-lg"
     >
-      {/* <div className="absolute top-0 left-0 h-full w-full bg-base-500/70 mix-blend-color" />
-      <div className="absolute top-0 left-0 h-full w-full bg-base-500/70 mix-blend-overlay" /> */}
       <div className="absolute top-0 left-0 h-full w-full bg-base-800/60" />
+      <div className="absolute left-0 top-0  h-full w-1/2 bg-gradient-to-tr from-black/50 via-transparent to-black/0"></div>
       <Filter />
 
       <h1 className=" z-40 overflow-hidden truncate text-ellipsis py-2 font-display text-7xl italic">
@@ -32,8 +30,10 @@ export function MainCard() {
         <div className="rounded-lg bg-white/10 p-4">
           <p>Play</p>
         </div>
-        <div className="flex h-24 w-1/3 items-center">
-          <p className="text-ellipsis">{trending[movie]?.overview}</p>
+        <div>
+          <div className="flex h-24 w-1/3 overflow-y-clip">
+            <p className="text-ellipsis">{trending[movie]?.overview}</p>
+          </div>
         </div>
       </div>
       <div className="absolute right-5 bottom-5">
@@ -42,11 +42,11 @@ export function MainCard() {
             src={IMAGE_PATH + trending[movie]?.poster_path}
             alt={trending[movie]?.original_title || 'Featured'}
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
           />
         </div>
       </div>
-      <div className="absolute top-5 right-5 z-30 flex items-center gap-1">
+      {/* <div className="absolute top-5 right-5 z-30 flex items-center gap-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -64,7 +64,7 @@ export function MainCard() {
         <span className="text-2xl ">
           {trending[movie]?.vote_average.toFixed(1)}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }

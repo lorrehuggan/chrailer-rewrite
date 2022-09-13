@@ -16,14 +16,14 @@ export default function SmCard({ movie }: ISmCardProps) {
           backgroundSize: 'cover',
           backgroundPosition: '0% 35%',
         }}
-        className="group relative h-44 w-96 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-80 shadow-lg transition-opacity duration-300 ease-in-out hover:opacity-100"
+        className="group relative h-44 w-96 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-80 shadow-lg brightness-110 transition-opacity duration-300 ease-in-out hover:opacity-100"
       >
         <Filter />
       </div>
-      <div className="">
-        <span className="truncate text-ellipsis text-lg text-base-200 ">
+      <div className="w-96 ">
+        <p className="truncate text-xl">
           {movie.title || movie.original_title || movie.name}
-        </span>
+        </p>
       </div>
     </div>
   );

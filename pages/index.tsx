@@ -30,7 +30,7 @@ const Home: NextPage<StoreProps> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-base-900 text-base-50">
+      <main className="max-h-screen min-h-screen overflow-hidden bg-base-900 text-base-50">
         <Header />
         <Body />
       </main>

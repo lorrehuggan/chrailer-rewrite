@@ -10,7 +10,7 @@ export function Genres({}) {
   }, [genres]);
 
   return (
-    <div className="h-1/3 w-full space-y-8 p-10">
+    <div className=" w-full basis-1/3 space-y-8 p-10">
       <h3 className="">Popular Genres</h3>
       <div className="flex w-full flex-wrap gap-2">
         {randomize.map((genre) => (
