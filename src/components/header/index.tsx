@@ -1,12 +1,13 @@
-import React from 'react';
 import Logo from './Logo';
-import Icons from './Icons';
 import Links from './Links';
 import Tagline from './Tagline';
+import UseAuth from '../../lib/hooks/useAuth';
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
+  const { signInWithGoogle, signOut, user, session } = UseAuth();
+
   return (
     <>
       <Tagline />
@@ -15,7 +16,13 @@ export default function Header(props: IHeaderProps) {
           <Logo />
           <Links />
         </div>
-        <Icons />
+        {user && (
+          <>
+            <span>{user.id}</span>
+            <button onClick={signOut}>sign out</button>
+          </>
+        )}
+        {!user && <button onClick={signInWithGoogle}>sign in</button>}
       </header>
     </>
   );

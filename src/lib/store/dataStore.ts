@@ -21,23 +21,23 @@ const dataStore = create<TrendingState>((set) => ({
   popular: [],
   genres: [],
   addTrending: (trending: IMovie[]) =>
-    set((state) => ({
+    set(() => ({
       trending,
     })),
   addUpcoming: (upcoming: IMovie[]) =>
-    set((state) => ({
+    set(() => ({
       upcoming,
     })),
   addTopRated: (top_rated: IMovie[]) =>
-    set((state) => ({
+    set(() => ({
       top_rated,
     })),
   addPopular: (popular: IMovie[]) =>
-    set((state) => ({
+    set(() => ({
       popular,
     })),
   addGenres: (genres: IGenre[]) =>
-    set((state) => ({
+    set(() => ({
       genres,
     })),
 }));

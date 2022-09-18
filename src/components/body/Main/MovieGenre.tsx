@@ -1,40 +1,26 @@
-import { useQuery } from '@tanstack/react-query';
-import { FETCH_CATEGORIES } from '../../../lib/movie-API';
 import MovieGroup from './MovieGroup';
-import { IMovie, IMovieResults } from '../../../types/movie';
 import UseFetch from '../../../lib/hooks/useFetch';
+import { IMovieResults } from '../../../types/movie';
 
 export interface IMovieGenreProps {
   id: string;
   name: string;
 }
 
-// const fetcher = async (id: string, number: string) => {
-//   try {
-//     const res = await fetch(`/api/genres?id=${id}&page=${number}`);
-//     const json = await res.json();
-//     return json;
-//   } catch (error: any) {
-//     console.log(error.message);
-//   }
-// };
-
 export default function MovieGenre({ id, name }: IMovieGenreProps) {
-  // const { data, isError, isLoading } = useQuery<IMovieResults>([name, id], () =>
-  //   fetcher(id, '1')
-  // );
-
-  const { isError, isLoading, data } = UseFetch({
+  const {
+    isError,
+    isLoading,
+    data,
+  }: { data: IMovieResults; isLoading: boolean; isError: boolean } = UseFetch({
     key: id,
     url: `/api/genres?id=${id}&page=1`,
-    variable: '',
+    variable: name,
   });
 
-  if (isError) {
-    <p>Error</p>;
-  }
+  if (isError) <p>Error</p>;
 
-  // TODO loading state
+  if (isLoading) <p>Loading...</p>;
 
   return <MovieGroup data={data?.results!} title={name} />;
 }

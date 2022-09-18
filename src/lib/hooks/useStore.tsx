@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { IGenre, IMovie } from '../../types/movie';
 import dataStore from '../store/dataStore';
 

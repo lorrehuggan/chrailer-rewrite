@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import dataStore from '../../../lib/store/dataStore';
 import { randomizeArray } from '../../../lib/utils';
 import MovieGenre from './MovieGenre';

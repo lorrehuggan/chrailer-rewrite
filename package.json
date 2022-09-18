@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-hook/intersection-observer": "^3.1.1",
+    "@supabase/supabase-js": "^1.35.6",
     "@tanstack/react-query": "^4.2.3",
+    "movie-trailer": "^2.1.0",
     "next": "12.2.5",
+    "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-youtube": "^10.0.0",
     "zustand": "^4.1.1"
   },
   "devDependencies": {

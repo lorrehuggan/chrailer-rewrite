@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 export interface Props {
   key: string;
   url: string;
-  variable: string;
+  variable: string | number | boolean;
 }
 
 const fetcher = async (url: string) => {
