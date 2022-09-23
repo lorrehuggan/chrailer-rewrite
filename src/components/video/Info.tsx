@@ -12,8 +12,9 @@ export interface IInfoProps {
 interface DataBase {
   created_at: Date;
   id: number;
-  likes: number[];
+  movie_likes: number[];
   user_id: string;
+  genre_likes: number[];
 }
 
 export default function Info({ movie }: IInfoProps) {
@@ -31,7 +32,7 @@ export default function Info({ movie }: IInfoProps) {
           .single();
       if (data) {
         //setLikes(data.likes);
-        const filterLikes = data.likes.find((id) => {
+        const filterLikes = data.movie_likes.find((id) => {
           return id === movie.id;
         });
         if (filterLikes) {
@@ -48,28 +49,28 @@ export default function Info({ movie }: IInfoProps) {
     const { data: likeArray, error }: { data: DataBase | null; error: any } =
       await supabase.from('user').select('*').eq('user_id', user?.id).single();
 
-    const filterLikes = likeArray?.likes.find((id) => {
+    const filterLikes = likeArray?.movie_likes.find((id) => {
       return id === movie.id;
     });
 
     if (!filterLikes && likeArray) {
+      setIsLiked(true);
       const { data, error } = await supabase
         .from('user')
-        .update({ likes: [...likeArray.likes, movie.id] })
+        .update({ movie_likes: [...likeArray.movie_likes, movie.id] })
         .eq('user_id', user?.id);
-      setIsLiked(true);
     }
 
     if (filterLikes && likeArray) {
-      const filter = likeArray?.likes.filter((id) => {
+      const filter = likeArray?.movie_likes.filter((id) => {
         return id !== movie.id;
       });
       console.log(filter);
+      setIsLiked(false);
       const { data, error } = await supabase
         .from('user')
-        .update({ likes: [...filter] })
+        .update({ movie_likes: [...filter] })
         .eq('user_id', user?.id);
-      setIsLiked(false);
     }
   };
 

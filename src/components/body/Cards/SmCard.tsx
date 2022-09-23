@@ -10,7 +10,7 @@ export interface ISmCardProps {
 
 export default function SmCard({ movie }: ISmCardProps) {
   return (
-    <div key={movie.id} className="group flex flex-col gap-2 ">
+    <div key={movie.id} className="group  flex flex-col  gap-2">
       <Link href={`/movie/${movie.id}`} passHref>
         <div
           style={{

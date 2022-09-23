@@ -20,10 +20,10 @@ export default function MovieGroup({ data, title }: IMovieGroupProps) {
         isIntersecting
           ? 'translate-y-0 opacity-100'
           : 'translate-y-12 opacity-0'
-      } transition-all duration-700 ease-in-out`}
+      } relative transition-all duration-700 ease-in-out`}
     >
       <h3 className="mb-4">{title}</h3>
-      <div className="scrollbar-hide flex flex-nowrap gap-4 overflow-scroll scroll-smooth">
+      <div className="scrollbar-hide relative flex flex-nowrap gap-4 overflow-scroll scroll-smooth">
         {data?.map((movie) => (
           <SmCard key={movie.id} movie={movie} />
         ))}
