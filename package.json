@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@react-hook/intersection-observer": "^3.1.1",
-    "@supabase/supabase-js": "^1.35.6",
-    "@tanstack/react-query": "^4.2.3",
+    "@supabase/supabase-js": "^1.35.7",
+    "@tanstack/react-query": "^4.3.9",
     "movie-trailer": "^2.1.0",
-    "next": "12.2.5",
+    "next": "12.3.1",
     "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,16 +21,16 @@
     "zustand": "^4.1.1"
   },
   "devDependencies": {
-    "@types/node": "18.7.16",
-    "@types/react": "18.0.18",
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.8",
-    "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.1",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.8",
-    "typescript": "4.8.2"
+    "typescript": "4.8.3"
   }
 }
