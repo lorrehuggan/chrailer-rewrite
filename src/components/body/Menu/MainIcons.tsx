@@ -63,7 +63,7 @@ export default function MainIcons(props: IMainIconsProps) {
             stroke="currentColor"
             className="color-trans h-6 w-6 cursor-pointer hover:stroke-secondary"
           >
-            <title>{'Log-In To Add'}</title>
+            <title>{'Click to Log-in'}</title>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -73,7 +73,7 @@ export default function MainIcons(props: IMainIconsProps) {
         </button>
       )}
       {user && (
-        <Link href={`/user/${user?.id}`}>
+        <Link href={`/user`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 import Link from 'next/link';
 import { IMAGE_PATH } from '../../../lib/movie-API';
 import dataStore from '../../../lib/store/dataStore';
@@ -54,12 +54,12 @@ export function MainCard({ data }: Props) {
         </div>
       </div>
       <div className="absolute right-5 bottom-5">
-        <div className="relative aspect-[3/4] h-56 overflow-hidden rounded shadow-lg">
+        <div className="relative aspect-[3/4.5] w-56 overflow-hidden rounded shadow-lg">
           <Image
             src={IMAGE_PATH + data[movie]?.poster_path}
             alt={data[movie]?.original_title || 'Featured'}
-            layout="fill"
-            objectFit="contain"
+            fill
+            className="object-contain"
           />
         </div>
       </div>

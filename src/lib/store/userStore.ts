@@ -1,9 +1,12 @@
 import { Session, User } from '@supabase/supabase-js';
 import create from 'zustand';
+import { IMoviePage } from '../../types/movie';
 
 interface UserState {
   user: User | null;
   session: Session | null;
+  movieLikes: IMoviePage[] | null;
+  setMovieLikes: (movieLikes: IMoviePage[]) => void;
   setSession: (session: Session | null) => void;
   setUser: (user: User | null) => void;
 }
@@ -18,6 +21,11 @@ const userStore = create<UserState>((set) => ({
   setSession: (session: Session | null) =>
     set(() => ({
       session,
+    })),
+  movieLikes: null,
+  setMovieLikes: (movieLikes: IMoviePage[]) =>
+    set(() => ({
+      movieLikes,
     })),
 }));
 

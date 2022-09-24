@@ -18,7 +18,6 @@ interface DataBase {
 }
 
 export default function Info({ movie }: IInfoProps) {
-  const { isPlaying } = videoStore();
   const [isLiked, setIsLiked] = useState(false);
   const { user } = userStore();
 
@@ -90,7 +89,8 @@ export default function Info({ movie }: IInfoProps) {
               </p>
             </Link>
           ))}
-          <div className="flex items-center gap-1">
+
+          <div className="flex items-center gap-1 rounded-md bg-neutral-50 p-1 text-neutral-900">
             <svg
               onClick={handleLike}
               xmlns="http://www.w3.org/2000/svg"

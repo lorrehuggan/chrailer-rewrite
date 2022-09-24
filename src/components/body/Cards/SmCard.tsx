@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import * as React from 'react';
 import { IMAGE_PATH } from '../../../lib/movie-API';
-import { IMovie } from '../../../types/movie';
+import { IMovie, IMoviePage } from '../../../types/movie';
 import Filter from './Filter';
 
 export interface ISmCardProps {
-  movie: IMovie;
+  movie: IMovie | IMoviePage;
 }
 
 export default function SmCard({ movie }: ISmCardProps) {
@@ -18,12 +18,12 @@ export default function SmCard({ movie }: ISmCardProps) {
             backgroundSize: 'cover',
             backgroundPosition: '0% 35%',
           }}
-          className="group relative h-44 w-96 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-80 shadow-lg brightness-110 transition-opacity duration-300 ease-in-out  hover:opacity-100"
+          className="group relative aspect-[3/1.75] w-96 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-80 shadow-lg brightness-110 transition-opacity duration-300 ease-in-out  hover:opacity-100"
         >
           <Filter />
           <div className="absolute top-0 left-0 flex w-full -translate-y-[100%] items-center justify-between gap-2 bg-black/60 py-4 px-2 transition-all duration-300 ease-in-out group-hover:translate-y-0">
             <p className="color-trans flex-1 truncate text-xl">
-              {movie.title || movie.original_title || movie.name}
+              {movie.title || movie.original_title}
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function SmCard({ movie }: ISmCardProps) {
 
       <div className="flex w-96 gap-2 overflow-y-hidden">
         <p className="color-trans flex-1 truncate text-xl font-bold transition-all duration-300 ease-in-out group-hover:translate-y-[100%]">
-          {movie.title || movie.original_title || movie.name}
+          {movie.title || movie.original_title}
         </p>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { IMovie } from '../../../types/movie';
+import { IMovie, IMoviePage } from '../../../types/movie';
 import SmCard from '../Cards/SmCard';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 
 export interface IMovieGroupProps {
-  data: IMovie[];
-  title: string;
+  data: IMovie[] | IMoviePage[];
+  title?: string;
 }
 
 export default function MovieGroup({ data, title }: IMovieGroupProps) {
