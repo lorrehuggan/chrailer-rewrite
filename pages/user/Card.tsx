@@ -13,7 +13,7 @@ export default function Card({ movie }: Props) {
     <div key={movie.id} className="flex w-[30rem] gap-3">
       <Link href={`/movie/${movie.id}`}>
         <div
-          className="relative aspect-[3/4.5] w-52 cursor-pointer rounded-md shadow-md"
+          className="relative aspect-[3/4.5] w-24 cursor-pointer rounded-md shadow-md md:w-52"
           style={{
             backgroundImage: `url(${IMAGE_PATH + movie.poster_path})`,
             backgroundSize: 'cover',

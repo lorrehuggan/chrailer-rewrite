@@ -16,14 +16,10 @@ export default function MovieGroup({ data, title }: IMovieGroupProps) {
   return (
     <div
       ref={setRef}
-      className={`${
-        isIntersecting
-          ? 'translate-y-0 opacity-100'
-          : 'translate-y-12 opacity-0'
-      } relative transition-all duration-700 ease-in-out`}
+      className={`relative transition-all duration-700 ease-in-out`}
     >
       <h3 className="mb-4">{title}</h3>
-      <div className="scrollbar-hide relative flex flex-nowrap gap-4 overflow-scroll scroll-smooth">
+      <div className="scrollbar-hide relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth md:gap-4">
         {data?.map((movie) => (
           <SmCard key={movie.id} movie={movie} />
         ))}

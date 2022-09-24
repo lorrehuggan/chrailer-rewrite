@@ -2,21 +2,45 @@ import Logo from './Logo';
 import Links from './Links';
 import Tagline from './Tagline';
 import UseAuth from '../../lib/hooks/useAuth';
+import {
+  Bars3BottomRightIcon,
+  XMarkIcon,
+  UserIcon,
+} from '@heroicons/react/24/solid';
+import userStore from '../../lib/store/userStore';
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
   const { signInWithGoogle, signOut, user, session } = UseAuth();
+  const { setMenuIsOpen, menuIsOpen } = userStore();
 
+  const handleMenu = () => {
+    setMenuIsOpen(!menuIsOpen);
+  };
   return (
     <>
       <Tagline />
-      <header className="flex h-44 items-center justify-between px-10">
+      <header className="flex h-24 items-center justify-between px-10 md:h-44">
         <div className="flex items-center gap-16">
           <Logo />
           <Links />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          {user && <UserIcon className="h-4 w-4 fill-green-300 md:hidden" />}
+          {menuIsOpen ? (
+            <XMarkIcon
+              onClick={handleMenu}
+              className="block h-6 w-6 md:hidden"
+            />
+          ) : (
+            <Bars3BottomRightIcon
+              onClick={handleMenu}
+              className="block h-6 w-6 md:hidden"
+            />
+          )}
+        </div>
+        <div className="hidden items-center gap-2 md:flex">
           {user && (
             <>
               <span className="text-sm text-base-300">

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { MainCard } from '../../src/components/body/Cards/MainCard';
 import MovieGroup from '../../src/components/body/Main/MovieGroup';
 import Menu from '../../src/components/body/Menu/index.';
+import MobileMenu from '../../src/components/body/Menu/MobileMenu';
 import Header from '../../src/components/header';
 import { FETCH_CATEGORIES, FETCH_GENRE } from '../../src/lib/movie-API';
 import { IMovie } from '../../src/types/movie';
@@ -37,6 +38,7 @@ export default function Genre({
       </Head>
       <main className="max-h-screen min-h-screen overflow-hidden bg-base-900 text-base-50">
         <Header />
+        <MobileMenu />
         <section className="flex">
           <Menu />
           <div className="w-full flex-1 overflow-hidden">

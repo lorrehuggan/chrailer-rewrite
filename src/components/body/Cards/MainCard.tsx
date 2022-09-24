@@ -24,7 +24,7 @@ export function MainCard({ data }: Props) {
       <div className="absolute left-0 top-0  h-full w-1/2 bg-gradient-to-tr from-black/50 via-transparent to-black/0"></div>
       <Filter />
 
-      <h1 className=" z-40 overflow-hidden truncate text-ellipsis py-2 font-display text-7xl italic">
+      <h1 className="z-40 overflow-hidden truncate text-ellipsis py-2 font-display text-2xl italic drop-shadow-lg md:text-7xl">
         {data[movie]?.title || data[movie]?.original_title || data[movie]?.name}
       </h1>
       <div className="z-40 flex items-center gap-5">
@@ -48,13 +48,13 @@ export function MainCard({ data }: Props) {
           </div>
         </Link>
         <div>
-          <div className="flex h-24 w-1/3 overflow-y-clip">
+          <div className="hidden h-24 w-1/3 overflow-y-clip md:flex">
             <p className="text-ellipsis">{data[movie]?.overview}</p>
           </div>
         </div>
       </div>
       <div className="absolute right-5 bottom-5">
-        <div className="relative aspect-[3/4.5] w-56 overflow-hidden rounded shadow-lg">
+        <div className="relative aspect-[3/4.5] w-20 overflow-hidden rounded shadow-lg lg:w-56">
           <Image
             src={IMAGE_PATH + data[movie]?.poster_path}
             alt={data[movie]?.original_title || 'Featured'}

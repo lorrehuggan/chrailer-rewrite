@@ -6,6 +6,8 @@ interface UserState {
   user: User | null;
   session: Session | null;
   movieLikes: IMoviePage[] | null;
+  menuIsOpen: boolean;
+  setMenuIsOpen: (menuIsOpen: boolean) => void;
   setMovieLikes: (movieLikes: IMoviePage[]) => void;
   setSession: (session: Session | null) => void;
   setUser: (user: User | null) => void;
@@ -26,6 +28,11 @@ const userStore = create<UserState>((set) => ({
   setMovieLikes: (movieLikes: IMoviePage[]) =>
     set(() => ({
       movieLikes,
+    })),
+  menuIsOpen: false,
+  setMenuIsOpen: (menuIsOpen: boolean) =>
+    set(() => ({
+      menuIsOpen,
     })),
 }));
 

@@ -65,7 +65,10 @@ export default function Video({ movie }: IVideoProps) {
   }
 
   return (
-    <div style={{ height: `${screen.y}px` }} className={`mx-auto aspect-video`}>
+    <div
+      style={{ height: `${screen.y}px` }}
+      className={`mx-auto mt-20 aspect-video md:mt-10 `}
+    >
       {videoID && (
         <YouTube
           onPlay={() => {

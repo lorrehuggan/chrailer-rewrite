@@ -11,6 +11,7 @@ import Header from '../../src/components/header';
 import Video from '../../src/components/video/Video';
 import videoStore from '../../src/lib/store/videoStore';
 import Info from '../../src/components/video/Info';
+import MobileMenu from '../../src/components/body/Menu/MobileMenu';
 
 export interface IMoviePageProps {
   movie: IMoviePage;
@@ -41,6 +42,7 @@ export default function MoviePage({
         />
       </Head>
       <main className="max-h-screen min-h-screen overflow-hidden bg-black text-base-50">
+        <MobileMenu />
         <Header />
         <Info movie={movie} />
         <Video movie={movie} />

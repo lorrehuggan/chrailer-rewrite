@@ -7,6 +7,7 @@ import supabase from '../../src/lib/utils/supabaseClient';
 import { IMoviePage } from '../../src/types/movie';
 import UseFetch from '../../src/lib/hooks/useFetch';
 import Main from './Main';
+import MobileMenu from '../../src/components/body/Menu/MobileMenu';
 
 export default function User() {
   const { user, setMovieLikes, movieLikes } = userStore();
@@ -51,11 +52,12 @@ export default function User() {
         <title>{user?.email?.split('@')[0]}</title>
         <meta name="description" content="My Favorite Films" />
       </Head>
-      <main className="max-h-screen min-h-screen overflow-hidden bg-base-900 text-base-50">
+      <main className=" min-h-screen overflow-hidden bg-base-900 pb-10 text-base-50 md:max-h-screen md:pb-0">
         <Header />
+        <MobileMenu />
         <section className="flex">
           <Menu />
-          <div className="h-screen flex-1 overflow-y-scroll ">
+          <div className=" flex-1 overflow-y-scroll md:h-screen ">
             <Main isLoading={isLoading} />
           </div>
         </section>

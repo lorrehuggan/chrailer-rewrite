@@ -74,23 +74,23 @@ export default function Info({ movie }: IInfoProps) {
   };
 
   return (
-    <div className="mb-2 px-10 transition-all duration-1000 ease-in-out">
-      <div className="flex justify-between">
-        <div className="flex items-center gap-2">
-          <h3 className="tracking-tighter">
+    <div className="mb-2 px-2 transition-all duration-1000 ease-in-out md:px-10">
+      <div className="flex  justify-between">
+        <div className="flex flex-1 items-center gap-2">
+          <h4 className="tracking-tighter md:text-4xl">
             {movie.original_title || movie.title}
-          </h3>
+          </h4>
         </div>
-        <div className="flex items-center justify-between gap-4">
-          {movie.genres.map((genre) => (
+        <div className="flex items-center justify-between gap-1">
+          {movie.genres.slice(0, 2).map((genre) => (
             <Link key={genre.id} href={`/genre/${genre.id}`}>
-              <p className="color-trans cursor-pointer font-bold uppercase hover:text-secondary">
+              <small className="color-trans cursor-pointer font-bold uppercase hover:text-secondary">
                 {genre.name}
-              </p>
+              </small>
             </Link>
           ))}
 
-          <div className="flex items-center gap-1 rounded-md bg-neutral-50 p-1 text-neutral-900">
+          <div className="flex items-center gap-1 rounded-md bg-neutral-50 py-[2px] px-1 text-neutral-900">
             <svg
               onClick={handleLike}
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ export default function Info({ movie }: IInfoProps) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`color-trans h-6 w-6 cursor-pointer ${
+              className={`color-trans h-4 w-4 cursor-pointer ${
                 isLiked ? 'fill-secondary stroke-secondary' : 'fill-transparent'
               }`}
             >
@@ -109,7 +109,7 @@ export default function Info({ movie }: IInfoProps) {
               />
             </svg>
 
-            <p>{movie.vote_average.toFixed(1)}</p>
+            <small>{movie.vote_average.toFixed(1)}</small>
           </div>
         </div>
       </div>
