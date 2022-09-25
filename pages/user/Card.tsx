@@ -10,8 +10,8 @@ interface Props {
 
 export default function Card({ movie }: Props) {
   return (
-    <div key={movie.id} className="flex w-[30rem] gap-3">
-      <Link href={`/movie/${movie.id}`}>
+    <div key={movie?.id} className="flex w-[30rem] gap-3">
+      <Link href={`/movie/${movie?.id}`}>
         <div
           className="relative aspect-[3/4.5] w-24 cursor-pointer rounded-md shadow-md md:w-52"
           style={{
@@ -26,9 +26,9 @@ export default function Card({ movie }: Props) {
       <div className="flex w-52 flex-col justify-between ">
         <div className="space-y-2">
           <p className=" truncate text-lg font-bold">
-            {movie.original_title || movie.title}
+            {movie?.original_title || movie?.title}
           </p>
-          <p>{movie.tagline}</p>
+          <p>{movie?.tagline}</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1 rounded-md p-1 ">
@@ -51,17 +51,17 @@ export default function Card({ movie }: Props) {
                 d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
-            {movie.vote_average && (
+            {movie?.vote_average && (
               <small
                 className="
               font-bold"
               >
-                {movie.vote_average.toFixed(1)}
+                {movie?.vote_average.toFixed(1)}
               </small>
             )}
           </div>
 
-          <Link href={`/movie/${movie.id}`}>
+          <Link href={`/movie/${movie?.id}`}>
             <div className="flex cursor-pointer items-center gap-1 rounded-md bg-green-400 p-1 text-green-900">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

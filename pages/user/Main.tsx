@@ -20,7 +20,7 @@ export default function Main({ isLoading }: Props) {
       </div>
       <div className="flex flex-wrap gap-4">
         {movieLikes &&
-          movieLikes?.map((movie) => <Card key={movie.id} movie={movie} />)}
+          movieLikes?.map((movie) => <Card key={movie?.id} movie={movie} />)}
       </div>
     </section>
   );
