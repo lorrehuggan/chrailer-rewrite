@@ -15,7 +15,7 @@ export default function Card({ movie }: Props) {
         <div
           className="relative aspect-[3/4.5] w-24 cursor-pointer rounded-md shadow-md md:w-52"
           style={{
-            backgroundImage: `url(${IMAGE_PATH + movie.poster_path})`,
+            backgroundImage: `url(${IMAGE_PATH + movie?.poster_path})`,
             backgroundSize: 'cover',
             backgroundPosition: '0% 35%',
           }}
