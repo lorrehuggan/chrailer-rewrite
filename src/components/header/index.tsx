@@ -28,17 +28,17 @@ export default function Header(props: IHeaderProps) {
         </div>
         <div className="flex items-center gap-1">
           {user && <UserIcon className="h-4 w-4 fill-green-300 md:hidden" />}
-          {menuIsOpen ? (
-            <XMarkIcon
-              onClick={handleMenu}
-              className="block h-6 w-6 md:hidden"
-            />
-          ) : (
-            <Bars3BottomRightIcon
-              onClick={handleMenu}
-              className="block h-6 w-6 md:hidden"
-            />
-          )}
+          <button
+            onClick={handleMenu}
+            className={`hamburger hamburger--collapse ${
+              menuIsOpen ? 'is-active' : ''
+            } " type="button
+            md:hidden`}
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div className="hidden items-center gap-2 md:flex">
           {user && (

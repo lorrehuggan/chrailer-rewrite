@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import userStore from '../../lib/store/userStore';
-import videoStore from '../../lib/store/videoStore';
 import supabase from '../../lib/utils/supabaseClient';
 import { IMoviePage } from '../../types/movie';
 
@@ -90,9 +89,11 @@ export default function Info({ movie }: IInfoProps) {
             </Link>
           ))}
 
-          <div className="flex items-center gap-1 rounded-md bg-neutral-50 py-[2px] px-1 text-neutral-900">
+          <div
+            onClick={handleLike}
+            className="flex items-center gap-1 rounded-md bg-neutral-50 py-[2px] px-1 text-neutral-900"
+          >
             <svg
-              onClick={handleLike}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
