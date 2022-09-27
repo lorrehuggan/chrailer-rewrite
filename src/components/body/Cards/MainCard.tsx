@@ -54,7 +54,7 @@ export function MainCard({ data }: Props) {
         </div>
       </div>
       <div className="absolute right-5 bottom-5">
-        <div className="relative aspect-[3/4.5] w-20 overflow-hidden rounded shadow-lg lg:w-56">
+        <div className="relative aspect-[3/4.5] w-20 overflow-hidden rounded shadow-lg lg:w-32">
           <Image
             src={IMAGE_PATH + data[movie]?.poster_path}
             alt={data[movie]?.original_title || 'Featured'}

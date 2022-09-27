@@ -18,10 +18,10 @@ export default function SmCard({ movie }: ISmCardProps) {
             backgroundSize: 'cover',
             backgroundPosition: '0% 35%',
           }}
-          className="group relative aspect-[3/1.75] h-44 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-80 shadow-lg brightness-110 transition-opacity duration-300 ease-in-out hover:opacity-100 md:aspect-[3/1.75]  md:w-96"
+          className="group relative aspect-[3/1.75] w-44 cursor-pointer overflow-hidden rounded-lg bg-base-900 p-8 opacity-100 shadow-lg brightness-110 transition-opacity duration-300 ease-in-out md:aspect-[3/1.75] md:w-96 md:opacity-80  md:hover:opacity-100"
         >
           <Filter />
-          <div className="absolute top-0 left-0 flex w-full -translate-y-[100%] items-center justify-between gap-2 bg-black/60 py-4 px-2 transition-all duration-300 ease-in-out group-hover:translate-y-0">
+          <div className="absolute top-0 left-0 flex w-full -translate-y-[100%] items-center justify-between gap-2 bg-black/60 py-4 px-2 transition-all duration-300 ease-in-out md:group-hover:translate-y-0">
             <p className="color-trans flex-1 truncate text-xl">
               {movie.title || movie.original_title}
             </p>
@@ -44,8 +44,8 @@ export default function SmCard({ movie }: ISmCardProps) {
         </div>
       </Link>
 
-      <div className="flex w-96 gap-2 overflow-y-hidden">
-        <p className="color-trans flex-1 truncate text-xl font-bold transition-all duration-300 ease-in-out group-hover:translate-y-[100%]">
+      <div className="flex w-44 gap-2 overflow-y-hidden">
+        <p className="color-trans flex-1 truncate text-xl font-bold transition-all duration-300 ease-in-out md:group-hover:translate-y-[100%]">
           {movie.title || movie.original_title}
         </p>
       </div>

@@ -43,6 +43,12 @@ export default function Info({ movie }: IInfoProps) {
     }
   }, [user, movie.id]);
 
+  const signInWithGoogle = async () => {
+    await supabase.auth.signIn({
+      provider: 'google',
+    });
+  };
+
   const handleLike = async () => {
     const { data: likeArray, error }: { data: DataBase | null; error: any } =
       await supabase.from('user').select('*').eq('user_id', user?.id).single();
@@ -90,7 +96,13 @@ export default function Info({ movie }: IInfoProps) {
           ))}
 
           <div
-            onClick={handleLike}
+            onClick={() => {
+              if (user) {
+                handleLike();
+                return;
+              }
+              signInWithGoogle();
+            }}
             className="flex items-center gap-1 rounded-md bg-neutral-50 py-[2px] px-1 text-neutral-900"
           >
             <svg

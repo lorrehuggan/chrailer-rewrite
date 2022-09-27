@@ -47,13 +47,13 @@ export default function MobileMenu(props: IMobileMenuProps) {
     >
       <p className="mb-4 text-3xl">Menu</p>
       <ul className="gap-6 text-center lg:flex">
-        <li className="transition-color text-lg font-bold text-secondary duration-300 ease-in-out hover:text-base-50">
+        <li className="transition-color text-lg  text-base-50 duration-300 ease-in-out hover:text-base-50">
           <Link href="/genre/16">Animation</Link>
         </li>
-        <li className="transition-color text-lg font-bold text-secondary duration-300 ease-in-out hover:text-base-50">
+        <li className="transition-color text-lg  text-base-50 duration-300 ease-in-out hover:text-base-50">
           <Link href="/genre/878">Sci-fi</Link>
         </li>
-        <li className="transition-color text-lg font-bold text-secondary duration-300 ease-in-out hover:text-base-50">
+        <li className="transition-color text-lg  text-base-50 duration-300 ease-in-out hover:text-base-50">
           <Link href="/genre/99">Documentary</Link>
         </li>
       </ul>
