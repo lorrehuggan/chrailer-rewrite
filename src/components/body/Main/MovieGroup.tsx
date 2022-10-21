@@ -18,8 +18,8 @@ export default function MovieGroup({ data, title }: IMovieGroupProps) {
     >
       <h3 className="mb-4">{title}</h3>
       <div
-        className=" relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth scrollbar md:gap-4
-       md:pb-6 md:scrollbar-none"
+        className=" relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth scrollbar-none
+       md:gap-4 md:pb-6"
       >
         {data?.map((movie) => (
           <SmCard key={movie.id} movie={movie} />
