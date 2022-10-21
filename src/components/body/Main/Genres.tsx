@@ -12,7 +12,7 @@ export function Genres({}) {
   }, [genres]);
 
   return (
-    <div className="flex-1 space-y-5 overflow-scroll md:pb-12">
+    <div className="flex-1 space-y-5 overflow-scroll scrollbar-none md:pb-12">
       <MovieGroup data={popular} title="Popular" />
       <MovieGroup data={top_rated} title="Top Rated" />
       <MovieGroup data={upcoming} title="Upcoming" />

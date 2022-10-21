@@ -11,15 +11,16 @@ export interface IMovieGroupProps {
 export default function MovieGroup({ data, title }: IMovieGroupProps) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null);
 
-  const { isIntersecting } = useIntersectionObserver(ref);
-
   return (
     <div
       ref={setRef}
-      className={`relative transition-all duration-700 ease-in-out`}
+      className={` relative transition-all duration-700 ease-in-out`}
     >
       <h3 className="mb-4">{title}</h3>
-      <div className=" relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth md:gap-4 md:pb-6">
+      <div
+        className=" relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth scrollbar md:gap-4
+       md:pb-6 md:scrollbar-none"
+      >
         {data?.map((movie) => (
           <SmCard key={movie.id} movie={movie} />
         ))}

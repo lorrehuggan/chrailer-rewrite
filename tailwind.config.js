@@ -43,5 +43,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-no-scrollbar'), require('tailwind-scrollbar')],
 };

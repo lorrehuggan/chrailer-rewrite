@@ -1,6 +1,7 @@
 import { Genres } from './Genres';
 import { MainCard } from '../Cards/MainCard';
 import dataStore from '../../../lib/store/dataStore';
+import Genre from '../../../../pages/genre/[id]';
 
 export function Main() {
   const { trending } = dataStore();
