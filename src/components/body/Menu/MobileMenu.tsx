@@ -4,6 +4,7 @@ import supabase from '../../../lib/utils/supabaseClient';
 import MainIcons from './MainIcons';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 
 export interface IMobileMenuProps {}
 

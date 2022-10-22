@@ -1,30 +1,47 @@
 import { useEffect, useRef, useState } from 'react';
 import { IMovie, IMoviePage } from '../../../types/movie';
 import SmCard from '../Cards/SmCard';
-import useIntersectionObserver from '@react-hook/intersection-observer';
-
+import { motion } from 'framer-motion';
+import useWindowSize from '../../../lib/hooks/useWindowSize';
 export interface IMovieGroupProps {
   data: IMovie[] | IMoviePage[];
   title?: string;
 }
 
 export default function MovieGroup({ data, title }: IMovieGroupProps) {
-  const [ref, setRef] = useState<HTMLDivElement | null>(null);
+  const [width, setWidth] = useState(1);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      console.log(carouselRef.current.offsetWidth);
+      console.log(carouselRef.current.scrollWidth);
+
+      setWidth(
+        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
+      );
+    }
+  }, []);
 
   return (
-    <div
-      ref={setRef}
-      className={` relative transition-all duration-700 ease-in-out`}
+    <motion.div
+      ref={carouselRef}
+      className="relative transition-all duration-700 ease-in-out bg-red overflow-hidden"
     >
       <h3 className="mb-4">{title}</h3>
-      <div
-        className=" relative flex flex-nowrap gap-2 overflow-scroll scroll-smooth scrollbar-none
-       md:gap-4 md:pb-6"
+      <motion.div
+        drag="x"
+        dragConstraints={{
+          right: 0,
+          left: -width,
+        }}
+        className=" relative flex flex-nowrap gap-2  scroll-smooth scrollbar-none md:gap-4 md:pb-6"
       >
         {data?.map((movie) => (
           <SmCard key={movie.id} movie={movie} />
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

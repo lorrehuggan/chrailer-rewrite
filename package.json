@@ -16,6 +16,8 @@
     "clsx": "^1.2.1",
     "embla-carousel": "^7.0.3",
     "embla-carousel-autoplay": "^7.0.3",
+    "embla-carousel-react": "^7.0.3",
+    "framer-motion": "^7.6.1",
     "movie-trailer": "^2.1.0",
     "next": "12.3.1",
     "next-auth": "^4.12.0",
