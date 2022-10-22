@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { IMovie, IMoviePage } from '../../../types/movie';
 import SmCard from '../Cards/SmCard';
 import { motion } from 'framer-motion';
-import useWindowSize from '../../../lib/hooks/useWindowSize';
 export interface IMovieGroupProps {
   data: IMovie[] | IMoviePage[];
   title?: string;
@@ -11,13 +10,9 @@ export interface IMovieGroupProps {
 export default function MovieGroup({ data, title }: IMovieGroupProps) {
   const [width, setWidth] = useState(1);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const windowSize = useWindowSize();
 
   useEffect(() => {
     if (carouselRef.current) {
-      console.log(carouselRef.current.offsetWidth);
-      console.log(carouselRef.current.scrollWidth);
-
       setWidth(
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
       );
@@ -29,7 +24,7 @@ export default function MovieGroup({ data, title }: IMovieGroupProps) {
       ref={carouselRef}
       className="relative transition-all duration-700 ease-in-out bg-red overflow-hidden"
     >
-      <h3 className="mb-4">{title}</h3>
+      <h3 className="mb-4 text-lg md:text-xl">{title}</h3>
       <motion.div
         drag="x"
         dragConstraints={{

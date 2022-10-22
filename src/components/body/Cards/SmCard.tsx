@@ -25,7 +25,7 @@ export default function SmCard({ movie }: ISmCardProps) {
         >
           <Filter />
           <div className="absolute top-0 left-0 flex w-full -translate-y-[100%] items-center justify-between gap-2 bg-black/60 py-4 px-2 transition-all duration-300 ease-in-out md:group-hover:translate-y-0">
-            <p className="color-trans flex-1 truncate text-xl">
+            <p className="color-trans flex-1 truncate text-sm md:text-xl">
               {movie.title || movie.original_title}
             </p>
             <svg
@@ -48,7 +48,7 @@ export default function SmCard({ movie }: ISmCardProps) {
       </Link>
 
       <div className="flex w-44 gap-2 overflow-y-hidden">
-        <p className="color-trans flex-1 truncate text-xl font-bold transition-all duration-300 ease-in-out md:group-hover:translate-y-[100%]">
+        <p className="color-trans flex-1 truncate text-sm md:text-xl font-bold transition-all duration-300 ease-in-out md:group-hover:translate-y-[100%]">
           {movie.title || movie.original_title}
         </p>
       </div>
