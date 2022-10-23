@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { IMovie, IMoviePage } from '../../../types/movie';
 import SmCard from '../Cards/SmCard';
 import { motion } from 'framer-motion';
+import { setTimeout } from 'timers/promises';
 export interface IMovieGroupProps {
   data: IMovie[] | IMoviePage[];
   title?: string;
@@ -17,7 +18,7 @@ export default function MovieGroup({ data, title }: IMovieGroupProps) {
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
       );
     }
-  }, []);
+  }, [width]);
 
   return (
     <motion.div
